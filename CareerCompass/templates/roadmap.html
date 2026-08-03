@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#0a273b;" data-bs-theme="light">
+            <div class="container">
+
+                <div>
+                    <a class="navbar-brand text-white" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="17"
+                            height="20" fill="currentColor" class="bi bi-compass-fill" viewBox="0 4 17 14">
+                            <path
+                                d="M15.5 8.516a7.5 7.5 0 1 1-9.462-7.24A1 1 0 0 1 7 0h2a1 1 0 0 1 .962 1.276 7.5 7.5 0 0 1 5.538 7.24m-3.61-3.905L6.94 7.439 4.11 12.39l4.95-2.828 2.828-4.95z" />
+                        </svg> CareerCompass</a>
+                </div>
+                <div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{{url_for('home')}}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{{url_for('after10')}}">After 10th</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{{url_for('streams')}}">Streams</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{{url_for('trend')}}">Trending</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{{url_for('guidance')}}">Guidance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{{url_for('about')}}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active btn btn-primary rounded-pill" aria-current="page"
+                                    href="{{url_for('contact')}}">Contact</a>
+                            </li>
+                            <button class="btn btn-outline-light ms-3 rounded-pill" onclick="toggleMode()" id="modeBtn">
+                                🌙
+                            </button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="roadmap-section mt-5">
+        <div class="container">
+            <div class="row justify-content-center align-items-center p-5">
+                <div class="col-md-8 shadow rounded p-5 bg-color">
+                    <h1 class="text-dark">🎓 Career Roadmap</h1>
+                    <hr>
+                    <!-- <p>{{ roadmap.career_name }}
+                    {{ roadmap.description }}
+                    {{ roadmap.eligibility }}
+                    {{ roadmap.roadmap_steps }}
+                    {{ roadmap.courses }}
+                    {{ roadmap.entrance_exams }}
+                    {{ roadmap.skills }}
+                    {{ roadmap.top_colleges }}
+                    {{ roadmap.salary }}
+                    {{ roadmap.future_scope }}</p> -->
+                    <h3 class="text-dark"><u>{{ roadmap.career_name }}</u></h3>
+                    <p class="text-dark">{{ roadmap.description }}</p>
+                    <div class="mb-4">
+                        {% for step in roadmap.roadmap_steps.split(',') %}
+                        <span class="btn btn-outline-primary m-1">{{ step }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="row mt-4">
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card info-card shadow-sm p-3 h-100">
+                                <h5>🎓 Eligibility</h5>
+                                <p>{{ roadmap.eligibility }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card info-card shadow-sm p-3 h-100">
+                                <h5>📚 Courses</h5>
+                                <p>{{ roadmap.courses }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card info-card shadow-sm p-3 h-100">
+                                <h5>📝 Entrance Exams</h5>
+                                <p>{{ roadmap.entrance_exams }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card info-card shadow-sm p-3 h-100">
+                                <h5>🛠 Skills Required</h5>
+                                <p>{{ roadmap.skills }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card info-card shadow-sm p-3 h-100">
+                                <h5>🏫 Top Colleges</h5>
+                                <p>{{ roadmap.top_colleges }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card info-card shadow-sm p-3 h-100">
+                                <h5>💰 Average Salary</h5>
+                                <p>{{ roadmap.salary }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card info-card shadow-sm p-3">
+                                <h5>🚀 Future Scope</h5>
+                                <p>{{ roadmap.future_scope }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-bg">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4 class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="22"
+                            height="20" fill="currentColor" class="bi bi-compass-fill" viewBox="0 0 16 20">
+                            <path
+                                d="M15.5 8.516a7.5 7.5 0 1 1-9.462-7.24A1 1 0 0 1 7 0h2a1 1 0 0 1 .962 1.276 7.5 7.5 0 0 1 5.538 7.24m-3.61-3.905L6.94 7.439 4.11 12.39l4.95-2.828 2.828-4.95z" />
+                        </svg> CareerCompass</h4>
+                    <p class="text-white">Modern career guidance for Class 10 students exploring streams, skills and
+                        future-ready careers</p>
+                    <div class="gap-3 d-flex mt-3">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2476 2476" width="30px" height="30px"
+                                id="instagram">
+                                <path
+                                    d="M825.4 1238c0-227.9 184.7-412.7 412.6-412.7 227.9 0 412.7 184.8 412.7 412.7 0 227.9-184.8 412.7-412.7 412.7-227.9 0-412.6-184.8-412.6-412.7m-223.1 0c0 351.1 284.6 635.7 635.7 635.7s635.7-284.6 635.7-635.7-284.6-635.7-635.7-635.7S602.3 886.9 602.3 1238m1148-660.9c0 82 66.5 148.6 148.6 148.6 82 0 148.6-66.6 148.6-148.6s-66.5-148.5-148.6-148.5-148.6 66.5-148.6 148.5M737.8 2245.7c-120.7-5.5-186.3-25.6-229.9-42.6-57.8-22.5-99-49.3-142.4-92.6-43.3-43.3-70.2-84.5-92.6-142.3-17-43.6-37.1-109.2-42.6-229.9-6-130.5-7.2-169.7-7.2-500.3s1.3-369.7 7.2-500.3c5.5-120.7 25.7-186.2 42.6-229.9 22.5-57.8 49.3-99 92.6-142.4 43.3-43.3 84.5-70.2 142.4-92.6 43.6-17 109.2-37.1 229.9-42.6 130.5-6 169.7-7.2 500.2-7.2 330.6 0 369.7 1.3 500.3 7.2 120.7 5.5 186.2 25.7 229.9 42.6 57.8 22.4 99 49.3 142.4 92.6 43.3 43.3 70.1 84.6 92.6 142.4 17 43.6 37.1 109.2 42.6 229.9 6 130.6 7.2 169.7 7.2 500.3 0 330.5-1.2 369.7-7.2 500.3-5.5 120.7-25.7 186.3-42.6 229.9-22.5 57.8-49.3 99-92.6 142.3-43.3 43.3-84.6 70.1-142.4 92.6-43.6 17-109.2 37.1-229.9 42.6-130.5 6-169.7 7.2-500.3 7.2-330.5 0-369.7-1.2-500.2-7.2M727.6 7.5c-131.8 6-221.8 26.9-300.5 57.5-81.4 31.6-150.4 74-219.3 142.8C139 276.6 96.6 345.6 65 427.1 34.4 505.8 13.5 595.8 7.5 727.6 1.4 859.6 0 901.8 0 1238s1.4 378.4 7.5 510.4c6 131.8 26.9 221.8 57.5 300.5 31.6 81.4 73.9 150.5 142.8 219.3 68.8 68.8 137.8 111.1 219.3 142.8 78.8 30.6 168.7 51.5 300.5 57.5 132.1 6 174.2 7.5 510.4 7.5 336.3 0 378.4-1.4 510.4-7.5 131.8-6 221.8-26.9 300.5-57.5 81.4-31.7 150.4-74 219.3-142.8 68.8-68.8 111.1-137.9 142.8-219.3 30.6-78.7 51.6-168.7 57.5-300.5 6-132.1 7.4-174.2 7.4-510.4s-1.4-378.4-7.4-510.4c-6-131.8-26.9-221.8-57.5-300.5-31.7-81.4-74-150.4-142.8-219.3C2199.4 139 2130.3 96.6 2049 65c-78.8-30.6-168.8-51.6-300.5-57.5-132-6-174.2-7.5-510.4-7.5-336.3 0-378.4 1.4-510.5 7.5"
+                                    fill="#FFFFFF"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 127.999 128"
+                                width="30px" height="30px" id="facebook">
+                                <path fill="#FFFFFF"
+                                    d="M64 7.989c-30.885 0-56.01 25.126-56.01 56.01 0 30.885 25.125 56.012 56.01 56.012 30.883 0 56.01-25.127 56.01-56.012 0-30.884-25.127-56.01-56.01-56.01zm15.83 35.358a1 1 0 0 1-1 1l-6.367.004c-4.201 0-4.969 1.636-4.969 4.858v6.684h10.92c.287 0 .561.124.75.34s.277.503.242.788l-1.555 12.033a1 1 0 0 1-.992.872h-9.365v29.879a1 1 0 0 1-1 1H54.07a1 1 0 0 1-1-1V69.926h-9.395a1 1 0 0 1-1-1V56.893a1 1 0 0 1 1-1h9.395v-7.875c0-10.43 6.312-16.908 16.475-16.908 4.369 0 8.23.325 9.416.482a1 1 0 0 1 .869.991v10.764z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 16 16"
+                                width="30px" height="30px" id="youtube">
+                                <path fill-rule="evenodd"
+                                    d="M15.32 4.06c-.434-.772-.905-.914-1.864-.968C12.498 3.027 10.089 3 8.002 3c-2.091 0-4.501.027-5.458.091-.957.055-1.429.196-1.867.969C.23 4.831 0 6.159 0 8.497v.008c0 2.328.23 3.666.677 4.429.438.772.909.912 1.866.977.958.056 3.368.089 5.459.089 2.087 0 4.496-.033 5.455-.088.959-.065 1.43-.205 1.864-.977.451-.763.679-2.101.679-4.429v-.008c0-2.339-.228-3.667-.68-4.438zM6 11.5v-6l5 3-5 3z"
+                                    clip-rule="evenodd" fill="#FFFFFF"></path>
+                            </svg>
+                        </div>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 100 100"
+                                width="30px" height="30px" id="linkedin">
+                                <path
+                                    d="M87.877 5.608H11.174c-3.673 0-6.65 2.886-6.65 6.448v77.101c0 3.562 2.978 6.451 6.65 6.451h76.703c3.673 0 6.646-2.89 6.646-6.451V12.056c0-3.561-2.973-6.448-6.646-6.448zM31.809 80.944H18.211V40.31h13.598v40.634zm-6.798-46.185h-.091c-4.56 0-7.516-3.119-7.516-7.023 0-3.983 3.043-7.017 7.693-7.017 4.651 0 7.512 3.033 7.602 7.017 0 3.905-2.95 7.023-7.688 7.023zm55.816 46.185H67.233v-21.74c0-5.464-1.97-9.191-6.886-9.191-3.761 0-5.993 2.515-6.973 4.942-.364.868-.453 2.08-.453 3.292v22.696H39.329s.178-36.823 0-40.634h13.593v5.761c1.805-2.768 5.029-6.717 12.249-6.717 8.947 0 15.656 5.804 15.656 18.291v23.3zM52.834 46.199c.024-.038.056-.084.088-.128v.128h-.088z"
+                                    fill="#FFFFFF"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h6 style="color: white;">Explore</h6>
+                    <div><a href="{{url_for('after10')}}" class="d-block mb-2 text-decoration-none text-secondary"
+                            style="color: gray;">After
+                            10th</a></div>
+                    <div><a href="{{url_for('streams')}}" class="d-block mb-2 text-decoration-none text-secondary"
+                            style="color: gray;">Streams</a></div>
+                    <div><a href="{{url_for('trend')}}" class="d-block mb-2 text-decoration-none text-secondary"
+                            style="color: gray;">Trending</a></div>
+                    <div><a href="{{url_for('guidance')}}" class="d-block mb-2 text-decoration-none text-secondary"
+                            style="color: gray;">Guidance</a></div>
+                    <div><a href="{{url_for('about')}}" class="d-block mb-2 text-decoration-none text-secondary"
+                            style="color: gray;">About us</a></div>
+                </div>
+                <div class="col-md-3">
+                    <h6 style="color: white;">Popular Fields</h6>
+
+                    <div>
+                        <p
+                            class="border rounded px-3 py-1 text-decoration-none text-light d-inline-block">arts</p>
+                        <p
+                            class="border rounded px-3 py-1 text-decoration-none text-light d-inline-block">commerce</p>
+                    </div>
+                    <div>
+                        <p
+                            class="border rounded px-3 py-1 text-decoration-none text-light d-inline-block">science</p>
+                        <p
+                            class="border rounded px-3 py-1 text-decoration-none text-light d-inline-block">Engineering</p>
+                    </div>
+                    <div>
+                        <p
+                            class="border rounded px-3 py-1 text-decoration-none text-light d-inline-block">Medical</p>
+                        <p class="border rounded px-3 py-1 text-decoration-none text-light d-inline-block">IT &
+                            Computer Science</p>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <h6 style="color: white;">Newsletter</h6>
+
+                    <form action="{{ url_for('subscribe') }}" method="POST" onsubmit="return validateNewsletter()">
+
+                        <div class="d-flex">
+
+                            <input type="email" id="newsletterEmail" name="email" class="form-control"
+                                placeholder="Enter your email">
+
+                            <button type="submit" class="btn btn-primary ms-2">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+
+                                    <path fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2" />
+
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function validateNewsletter() {
+            let email = document.getElementById("newsletterEmail").value;
+            if (email == "") {
+                alert("Enter your email");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script>
+        let dark = false;
+
+        function toggleMode() {
+            let body = document.body;
+            let button = document.getElementById("modeBtn");
+
+            if (dark == false) {
+                body.style.backgroundColor = "#103046";
+                body.style.color = "#ffff";
+                button.innerHTML = "☀️";
+                dark = true;
+            }
+            else {
+                body.style.backgroundColor = "#ffff";
+                body.style.color = "#000000";
+                button.innerHTML = "🌙";
+                dark = false;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
