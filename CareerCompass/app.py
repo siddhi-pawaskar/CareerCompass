@@ -26,6 +26,10 @@ def streams():
     streams = cursor.fetchall()
     return render_template('streams.html',streams = streams)
 
+@app.route('/career_recommendation')
+def career_recommendation():
+    return render_template('career_recommendation.html')
+
 @app.route('/trend')
 def trend():
     cursor.execute('SELECT *FROM trending')
