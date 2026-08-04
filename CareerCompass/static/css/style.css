@@ -144,23 +144,4 @@ body {
     margin-top:80px;
 }
 
-#topBtn{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: transform 0.5s ease;
-}
-
-#topBtn img{
-    width: 70px;
-    transition: transform 0.5s ease;
-}
-
-.launch{
-    transform: translateY(-150px);
-}
 
