@@ -234,85 +234,233 @@
             let result = document.getElementById("result");
 
             // COMPUTER
-            if (subject == "Computer" && interest == "Technology" && style == "Problem Solving") {
+            if (subject == "Computer") {
 
-                result.innerHTML = `
-    <div class="card p-3 shadow rounded-4">
-        <h4 class="text-success">🎯 Recommended Careers</h4>
-        <ul class="text-start mb-0">
-            <li>Software Developer</li>
-            <li>Cyber Security Expert</li>
-            <li>AI Engineer</li>
-        </ul>
-    </div>`;
+                if (interest == "Technology" && style == "Problem Solving") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Software Developer</li>
+                    <li>AI Engineer</li>
+                    <li>Cyber Security Expert</li>
+                    <li>Cloud Engineer</li>
+                </ul>
+            </div>`;
+                }
+
+                else if (style == "Creative Thinking") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>UI/UX Designer</li>
+                    <li>Frontend Developer</li>
+                    <li>Web Designer</li>
+                    <li>Graphic Designer</li>
+                </ul>
+            </div>`;
+                }
+
+                else {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Full Stack Developer</li>
+                    <li>Software Tester</li>
+                    <li>Database Administrator</li>
+                    <li>Mobile App Developer</li>
+                </ul>
+            </div>`;
+                }
             }
 
             // SCIENCE
-            else if (subject == "Science" && interest == "Medical" && style == "Helping People") {
+            else if (subject == "Science") {
 
-                result.innerHTML = `
-    <div class="card p-3 shadow rounded-4">
-        <h4 class="text-success">🎯 Recommended Careers</h4>
-        <ul class="text-start mb-0">
-            <li>Doctor</li>
-            <li>Nurse</li>
-            <li>Pharmacist</li>
-        </ul>
-    </div>`;
+                if (interest == "Medical") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Doctor</li>
+                    <li>Nurse</li>
+                    <li>Pharmacist</li>
+                    <li>Physiotherapist</li>
+                </ul>
+            </div>`;
+                }
+
+                else if (interest == "Technology") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Biomedical Engineer</li>
+                    <li>Research Scientist</li>
+                    <li>Lab Scientist</li>
+                    <li>Bioinformatics Specialist</li>
+                </ul>
+            </div>`;
+                }
+
+                else {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Laboratory Technician</li>
+                    <li>Microbiologist</li>
+                    <li>Chemist</li>
+                    <li>Nutritionist</li>
+                </ul>
+            </div>`;
+                }
             }
 
             // COMMERCE
-            else if (subject == "Commerce" && interest == "Business" && style == "Leadership") {
+            else if (subject == "Commerce") {
 
-                result.innerHTML = `
-    <div class="card p-3 shadow rounded-4">
-        <h4 class="text-success">🎯 Recommended Careers</h4>
-        <ul class="text-start mb-0">
-            <li>Chartered Accountant</li>
-            <li>Business Manager</li>
-            <li>Entrepreneur</li>
-        </ul>
-    </div>`;
+                if (interest == "Business") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Chartered Accountant</li>
+                    <li>Entrepreneur</li>
+                    <li>Finance Manager</li>
+                    <li>Business Manager</li>
+                </ul>
+            </div>`;
+                }
+
+                else if (interest == "Technology") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Financial Analyst</li>
+                    <li>Investment Banker</li>
+                    <li>Tax Consultant</li>
+                    <li>Data Analyst</li>
+                </ul>
+            </div>`;
+                }
+
+                else {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Banking Officer</li>
+                    <li>Insurance Advisor</li>
+                    <li>Accountant</li>
+                    <li>Auditor</li>
+                </ul>
+            </div>`;
+                }
             }
 
             // MATHEMATICS
-            else if (subject == "Mathematics" && interest == "Technology" && style == "Problem Solving") {
+            else if (subject == "Mathematics") {
 
-                result.innerHTML = `
-    <div class="card p-3 shadow rounded-4">
-        <h4 class="text-success">🎯 Recommended Careers</h4>
-        <ul class="text-start mb-0">
-            <li>Data Scientist</li>
-            <li>Software Engineer</li>
-            <li>Statistician</li>
-        </ul>
-    </div>`;
+                if (interest == "Technology") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Data Scientist</li>
+                    <li>Software Engineer</li>
+                    <li>AI Engineer</li>
+                    <li>Machine Learning Engineer</li>
+                </ul>
+            </div>`;
+                }
+
+                else if (interest == "Business") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Financial Analyst</li>
+                    <li>Actuary</li>
+                    <li>Investment Analyst</li>
+                    <li>Risk Manager</li>
+                </ul>
+            </div>`;
+                }
+
+                else {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Statistician</li>
+                    <li>Mathematician</li>
+                    <li>Research Analyst</li>
+                    <li>Operations Analyst</li>
+                </ul>
+            </div>`;
+                }
             }
 
             // ENGLISH
-            else if (subject == "English" && interest == "Creative" && style == "Creative Thinking") {
+            else if (subject == "English") {
 
-                result.innerHTML = `
-    <div class="card p-3 shadow rounded-4">
-        <h4 class="text-success">🎯 Recommended Careers</h4>
-        <ul class="text-start mb-0">
-            <li>Content Writer</li>
-            <li>Journalist</li>
-            <li>Digital Marketer</li>
-        </ul>
-    </div>`;
+                if (interest == "Teaching") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Teacher</li>
+                    <li>Professor</li>
+                    <li>Trainer</li>
+                    <li>Career Counselor</li>
+                </ul>
+            </div>`;
+                }
+
+                else if (interest == "Creative") {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Content Writer</li>
+                    <li>Journalist</li>
+                    <li>Author</li>
+                    <li>Copywriter</li>
+                </ul>
+            </div>`;
+                }
+
+                else {
+                    result.innerHTML = `
+            <div class="card p-3 shadow mt-3">
+                <h4 class="text-success">🎯 Recommended Careers</h4>
+                <ul class="text-start">
+                    <li>Editor</li>
+                    <li>Translator</li>
+                    <li>News Anchor</li>
+                    <li>Communication Specialist</li>
+                </ul>
+            </div>`;
+                }
             }
 
             // DEFAULT
             else {
-
                 result.innerHTML = `
-    <div class="alert alert-warning">
-        ⚠ No exact recommendation found.<br>
-        Please try another combination.
-    </div>`;
+        <div class="card p-3 shadow mt-3">
+            <h4 class="text-success">🎯 Recommended Careers</h4>
+            <ul class="text-start">
+                <li>Career Counselor</li>
+                <li>Government Officer</li>
+                <li>Entrepreneur</li>
+                <li>Public Service Professional</li>
+            </ul>
+        </div>`;
             }
-
         }
     </script>
     <script>
