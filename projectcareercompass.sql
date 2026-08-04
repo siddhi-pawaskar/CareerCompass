@@ -72,20 +72,6 @@ CREATE TABLE `contacts` (
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `contacts`
---
-
-INSERT INTO `contacts` (`id`, `name`, `email`, `comment`) VALUES
-(1, 'Siddhi', 'siddhi22pawaskar@gmail.com', 'It is really nice, want the roadmap for Hotel management, please add this roadmap too..'),
-(2, 'Aditi Rajesh Pawaskar', 'aditipawaskar22@gmail.com', 'Very good website for career guidance.. Gives Nice Information about the careers'),
-(3, 'Abhijit Kirloskar', 'helloworld_23@gmail.com', 'very good'),
-(4, '', '', ''),
-(5, 'Vrunda Mohan Sathe', 'vmsathe_13@gmail.com', 'Very good. I was finding a good way for my child.. I got nice information'),
-(7, 'Suvarna', 'suvarnashinde__12@gmail.com', 'thank you careercompass to give this important information about careers. '),
-(8, 'Rupali', 'r_rupali_patkar@gmail.com', 'I was confused about my career after 10th class but CareerCompass helped me a lot');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `roadmaps`
@@ -162,17 +148,6 @@ CREATE TABLE `subscribers` (
   `email` varchar(255) NOT NULL,
   `subscribed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `subscribers`
---
-
-INSERT INTO `subscribers` (`id`, `email`, `subscribed_at`) VALUES
-(1, 'siddhi22pawaskar@gmail.com', '2026-07-24 11:44:10'),
-(2, 'aditipawaskar22@gmail.com', '2026-07-24 11:44:43'),
-(5, 'gauripawaskar@gmail.com', '2026-07-24 15:53:31');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `trending`
