@@ -12,6 +12,7 @@ CareerCompass is a Career Guidance Portal developed using Flask, HTML, CSS, Boot
 - Career roadmaps
 - Trending careers
 - Contact form
+- Career Recommendation
 - Newsletter subscription
 - Responsive user interface
 - MySQL database integration
@@ -49,6 +50,7 @@ CareerCompass/
     ├── about.html
     ├── after10th.html
     ├── career_details.html
+    ├── career_recommendation.html
     ├── contact.html
     ├── guidance.html
     ├── roadmap.html
